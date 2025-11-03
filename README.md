@@ -5,37 +5,18 @@ A full-stack URL shortener web application built using Node.js, Express, MongoDB
 
 
 
+🚀 Features
 
-Bitly Clone – URL Shortener
-This project is a complete implementation of a URL shortener web application inspired by Bitly.
-It allows users to:
+✨ User Authentication – Secure signup, login, and logout flow
+🔗 URL Shortening – Convert long URLs into concise, shareable links
+📊 Analytics Dashboard – Track number of clicks for each short URL
+🧭 Dynamic Routing – Redirect users instantly via unique short links
+🛡️ Protected Routes – Access control for authenticated users only
 
-Sign up and log in using secure authentication.
 
-Create custom short URLs from long links.
-
-Track the number of clicks on each shortened link.
-
-View all their generated URLs in a personalized dashboard.
-
-Tech Stack:
-
-Backend: Node.js, Express.js
-
-Database: MongoDB with Mongoose
-
-Frontend: EJS Templates
-
-Authentication: Cookies & JWT
-
-Features:
-
-User authentication (Signup, Login, Logout)
-
-Short link generation
-
-Click analytics for each link
-
-Protected routes for logged-in users
-
-Dynamic page rendering with EJS
+| Category            | Technologies Used               |
+| ------------------- | ------------------------------- |
+| **Backend**         | Node.js, Express.js             |
+| **Database**        | MongoDB, Mongoose               |
+| **Frontend**        | EJS Templates, HTML, CSS        |
+| **Auth & Sessions** | Cookies (to be upgraded to JWT) |
