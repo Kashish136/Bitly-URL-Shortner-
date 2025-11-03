@@ -1,0 +1,46 @@
+POST/URL - generates a new short URL and returns 
+the shortened URL in the format example.com/random-id.
+
+
+Get/:id-Redirects the user to the original URL
+
+
+Get/URL/analytics/:id - Returns the clicks for the provided short id
+
+
+step no.1 - do npm init (for starting with node.js)
+step no.2 - do nom i express ( for installing express.js)
+step no.3 perform npm i mongoose (for performing installation of libraries for connecting mongodb)
+we will be using models , views and controllers
+aka mvc architecture for solving problems
+
+
+// whatever data that comes from backend is present in locals 
+// its available in locals
+
+
+
+
+
+
+
+
+
+// authentication patterns 
+statefull -> client side maintenance , a state is main tained
+ a client requests his username , password , in return the server will give or return  a unique user-id , aka session unique id 
+ GET/users/id:unique id:367 to the server , state maintained by the server , checks if a user exists or not if it exists then access will be given 
+
+ unique id transmission  : cookies , response , headers
+ for server side rendering : we use cookies
+ for rest-api handling : we use headers
+
+ client->auth middleware
+     checks for cookie value or uid,
+     if valid , if its already existing the uid is already present -> endpoint route
+     and verified by the middleware 
+    , if valid calls next() , else reject the request
+
+
+    
+stateless

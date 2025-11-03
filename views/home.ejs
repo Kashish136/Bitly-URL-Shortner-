@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bitly Clone - Home</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .logout {
+      float: right;
+      margin-top: -40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Bitly Clone</h1>
+
+  <% if (user) { %>
+    <p>Hi, <strong><%= user.name %></strong> 👋</p>
+    <form action="/user/logout" method="POST" class="logout">
+      <button type="submit">Logout</button>
+    </form>
+
+    <form method="POST" action="/url">
+      <label>Enter Your Original URL:</label>
+      <input type="text" name="url" placeholder="https://example.com" required />
+      <button type="submit">Generate Short URL</button>
+    </form>
+
+    <% if (typeof id !== 'undefined' && id) { %>
+      <p>✅ Short URL: 
+        <a href="/<%= id %>">http://localhost:8002/<%= id %></a>
+      </p>
+    <% } %>
+
+    <% if (urls && urls.length > 0) { %>
+      <h3>Your URLs</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Short ID</th>
+            <th>Redirect</th>
+            <th>Clicks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% urls.forEach((url, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= url.shortId %></td>
+              <td><a href="<%= url.redirectUrl %>"><%= url.redirectUrl %></a></td>
+              <td><%= url.visitHistory.length %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>You haven’t created any short URLs yet.</p>
+    <% } %>
+
+  <% } else { %>
+    <p>You must <a href="/login">login</a> to create short URLs.</p>
+  <% } %>
+</body>
+</html>

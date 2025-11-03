@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Bitly</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+      background-color: #f9fafb;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      color: #555;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Bitly 🚀</h1>
+  <p>Shorten your URLs easily — but you need to sign up or log in first!</p>
+
+  <% if (locals.error) { %>
+    <script>alert("<%= error %>");</script>
+  <% } %>
+
+  <div>
+    <a href="/user/signup"><button>Signup</button></a>
+    <a href="/user/login"><button>Login</button></a>
+  </div>
+</body>
+</html>
